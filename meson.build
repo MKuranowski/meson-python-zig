@@ -12,7 +12,10 @@ py.install_sources(
 
 shared_library(
     'extern',
-    ['pypkg/extern.c'],
+    [
+        'pypkg/extern/bar.c',
+        'pypkg/extern/foo.c',
+    ],
     install: true,
     install_dir: py.get_install_dir() / 'pypkg',
 )

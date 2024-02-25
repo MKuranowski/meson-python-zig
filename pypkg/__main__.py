@@ -12,11 +12,7 @@ else:
 lib_path = str(Path(__file__).with_name(lib_filename))
 lib = ctypes.cdll.LoadLibrary(lib_path)
 
-lib.add.argtypes = [c_int, c_int]
-lib.add.restype = c_int
+lib.bar.argtypes = [c_int, c_int]
+lib.bar.restype = None
 
-lib.print.argtypes = [c_char_p]
-lib.print.restype = None
-
-print(lib.add(35, 2*17))
-lib.print("Hello, world!".encode("utf-8"))
+lib.bar(35, 2*17)

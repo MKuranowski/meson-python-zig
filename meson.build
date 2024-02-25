@@ -1,9 +1,18 @@
-project('purelib-and-platlib', 'c')
+project('pypkg', 'c')
 
 py = import('python').find_installation(pure: false)
 
-py.extension_module(
-    'our_first_module',
-    'our_first_module.c',
+py.install_sources(
+    [
+        'pypkg/__init__.py',
+        'pypkg/__main__.py',
+    ],
+    subdir: 'pypkg',
+)
+
+shared_library(
+    'extern',
+    ['pypkg/extern.c'],
     install: true,
+    install_dir: py.get_install_dir() / 'pypkg',
 )

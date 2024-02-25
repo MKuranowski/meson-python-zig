@@ -3,5 +3,5 @@ build-backend = 'mesonpy'
 requires = ['meson-python']
 
 [project]
-name = 'our-first-project'
+name = 'pypkg'
 version = '0.0.1'

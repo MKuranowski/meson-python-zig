@@ -1,0 +1,11 @@
+#!/bin/sh
+# Copyright (c) 2023 Adrian Perez
+# https://perezdecastro.org/2023/standalone-binaries-zigcc-meson.html
+set -e
+target=$1
+shift
+
+if [ "$1" = '-Wl,--version' ] ; then
+    exec clang -fuse-ld=lld "$@"
+fi
+exec zig cc --target="$target" "$@"

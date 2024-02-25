@@ -4,7 +4,7 @@ import ctypes
 import sys
 
 if sys.platform.startswith("win32"):
-    lib_filename = "extern.dll"
+    lib_filename = "libextern.dll"
 elif sys.platform.startswith("darwin"):
     lib_filename = "libextern.dylib"
 else:
